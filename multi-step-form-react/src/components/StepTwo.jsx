@@ -1,5 +1,9 @@
 import "./StepTwo.css";
 import { useState } from "react";
+import arcadeImg from "../assets/images/icon-arcade.svg";
+import proImg from "../assets/images/icon-pro.svg";
+import advancedImg from "../assets/images/icon-advanced.svg";
+
 export default function StepTwo({ ...props }) {
   const [paymentMethod, setPaymentMethod] = useState("Monthly");
   function handleMonthToYear() {
@@ -21,19 +25,25 @@ export default function StepTwo({ ...props }) {
           <p>You have the option of monthly or yearly billing</p>
         </div>
         <div className="card-content">
-          <div className="paymentPlan">
-            <img />
-            <div className="paymentPlan-content">
+          <div className="payment-plan">
+            <img src={arcadeImg} />
+            <div className="paymentplan-content">
               <h3>Arcade</h3>
               {paymentMethod == "Monthly" ? <p>$9/mo</p> : null}
               {paymentMethod == "Yearly" ? <p>$90/yr</p> : null}
             </div>
-            <div className="paymentPlan-content">
+          </div>
+          <div className="payment-plan">
+            <img src={advancedImg} />
+            <div className="paymentplan-content">
               <h3>Advanced</h3>
               {paymentMethod == "Monthly" ? <p>$12/mo</p> : null}
               {paymentMethod == "Yearly" ? <p>$120/yr</p> : null}
             </div>
-            <div className="paymentPlan-content">
+          </div>
+          <div className="payment-plan">
+            <img src={proImg} />
+            <div className="paymentplan-content">
               <h3>Pro</h3>
               {paymentMethod == "Monthly" && <p>$15/mo</p>}
               {paymentMethod == "Yearly" && <p>$150/yr</p>}

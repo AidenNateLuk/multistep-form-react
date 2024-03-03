@@ -19,23 +19,20 @@ main {
   .card-content {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
     label {
       color: hsl(213, 96%, 18%);
       font-weight: 500;
     }
-    input {
-      color: hsl(229, 24%, 87%);
-      font-size: 16px;
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border-radius: 5px;
-      border: hsl(231, 11%, 63%) 1px solid;
-      font-weight: 700;
-      color: hsl(229, 24%, 87%) 1px solid;
-    }
-    input::placeholder {
-      color: hsl(231, 11%, 63%);
+    .payment-plan {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      padding: 0.25rem;
+      border: black solid 1px;
+      border-radius: 10px;
+      padding: 1rem;
     }
   }
 }
