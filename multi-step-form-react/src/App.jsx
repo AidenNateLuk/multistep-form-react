@@ -6,19 +6,29 @@ import StepTwo from "./components/StepTwo.jsx";
 
 function App() {
   const [currentStep, setCurrentStep] = useState("StepOne");
-  function handleNext() {
+  const handleNext = () => {
     if (currentStep == "StepOne") {
       setCurrentStep("StepTwo");
     }
-  }
+  };
+  const handlePrevious = () => {
+    if (currentStep == "StepTwo") {
+      setCurrentStep("StepOne");
+    }
+  };
   return (
     <>
-      <Header />
+      <Header title={currentStep} onTitleChange={handleNext} />
       <div className="card">
         {currentStep == "StepOne" && <StepOne />}
         {currentStep == "StepTwo" && <StepTwo />}
       </div>
       <footer>
+        {currentStep == "StepTwo" && (
+          <button id="back-btn" onClick={handlePrevious}>
+            Back
+          </button>
+        )}
         <button onClick={handleNext} id="next">
           Next Step
         </button>

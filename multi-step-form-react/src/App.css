@@ -29,5 +29,12 @@
       padding: 1rem 1.25rem;
       margin-right: 2rem;
     }
+    #back-btn {
+      background: transparent;
+      border: none;
+      color: hsl(213, 96%, 18%);
+      position: absolute;
+      left: 0;
+    }
   }
 }

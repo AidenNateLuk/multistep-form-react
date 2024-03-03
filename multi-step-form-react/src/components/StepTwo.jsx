@@ -25,38 +25,38 @@ export default function StepTwo({ ...props }) {
           <p>You have the option of monthly or yearly billing</p>
         </div>
         <div className="card-content">
-          <div className="payment-plan">
+          <button type="button" className="payment-plan">
             <img src={arcadeImg} />
             <div className="paymentplan-content">
               <h3>Arcade</h3>
               {paymentMethod == "Monthly" ? <p>$9/mo</p> : null}
               {paymentMethod == "Yearly" ? <p>$90/yr</p> : null}
             </div>
-          </div>
-          <div className="payment-plan">
+          </button>
+          <button type="button" className="payment-plan">
             <img src={advancedImg} />
             <div className="paymentplan-content">
               <h3>Advanced</h3>
               {paymentMethod == "Monthly" ? <p>$12/mo</p> : null}
               {paymentMethod == "Yearly" ? <p>$120/yr</p> : null}
             </div>
-          </div>
-          <div className="payment-plan">
+          </button>
+          <button type="button" className="payment-plan">
             <img src={proImg} />
             <div className="paymentplan-content">
               <h3>Pro</h3>
               {paymentMethod == "Monthly" && <p>$15/mo</p>}
               {paymentMethod == "Yearly" && <p>$150/yr</p>}
             </div>
+          </button>
+          <div className="monthly-yearly">
+            <button type="button" onClick={handleYearToMonth}>
+              Monthly
+            </button>
+            <button type="button" onClick={handleMonthToYear}>
+              Yearly
+            </button>
           </div>
-        </div>
-        <div className="monthly-yearly">
-          <button type="button" onClick={handleYearToMonth}>
-            Monthly
-          </button>
-          <button type="button" onClick={handleMonthToYear}>
-            Yearly
-          </button>
         </div>
       </form>
     </main>

@@ -30,9 +30,39 @@ main {
       flex-direction: row;
       gap: 1rem;
       padding: 0.25rem;
-      border: black solid 1px;
+      border: hsl(229, 24%, 87%) solid 1px;
       border-radius: 10px;
       padding: 1rem;
+      cursor: pointer;
+      background-color: white;
+    }
+    .payment-plan:hover {
+      background-color: hsla(265, 74%, 91%, 0.224);
+      border-color: hsl(273, 92%, 66%);
+    }
+    .payment-plan:active {
+      background-color: hsla(266, 83%, 88%, 0.224);
+      border-color: hsl(273, 99%, 70%);
+    }
+    .monthly-yearly {
+      background-color: hsl(229, 24%, 87%);
+      display: flex;
+      justify-content: space-around;
+      border-radius: 10px;
+      padding: 1rem;
+      button {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        color: hsl(213, 96%, 18%);
+      }
+      button:active {
+        color: hsl(213, 98%, 22%);
+        background-color: hsla(0, 0%, 100%, 0.138);
+      }
     }
   }
 }
