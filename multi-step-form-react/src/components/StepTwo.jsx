@@ -1,19 +1,17 @@
 import "./StepTwo.css";
-import { useState } from "react";
 import arcadeImg from "../assets/images/icon-arcade.svg";
 import proImg from "../assets/images/icon-pro.svg";
 import advancedImg from "../assets/images/icon-advanced.svg";
 
-export default function StepTwo({ ...props }) {
-  const [paymentMethod, setPaymentMethod] = useState("Monthly");
+export default function StepTwo({ isMonthly, isYearly, setPaymentPlan }) {
   function handleMonthToYear() {
-    if (paymentMethod == "Monthly") {
-      setPaymentMethod("Yearly");
+    if (isMonthly) {
+      setPaymentPlan("Yearly");
     }
   }
   function handleYearToMonth() {
-    if (paymentMethod == "Yearly") {
-      setPaymentMethod("Monthly");
+    if (isYearly) {
+      setPaymentPlan("Monthly");
     }
   }
 
@@ -29,24 +27,24 @@ export default function StepTwo({ ...props }) {
             <img src={arcadeImg} />
             <div className="paymentplan-content">
               <h3>Arcade</h3>
-              {paymentMethod == "Monthly" ? <p>$9/mo</p> : null}
-              {paymentMethod == "Yearly" ? <p>$90/yr</p> : null}
+              {isMonthly && <p>$9/mo</p>}
+              {isYearly && <p>$90/yr</p>}
             </div>
           </button>
           <button type="button" className="payment-plan">
             <img src={advancedImg} />
             <div className="paymentplan-content">
               <h3>Advanced</h3>
-              {paymentMethod == "Monthly" ? <p>$12/mo</p> : null}
-              {paymentMethod == "Yearly" ? <p>$120/yr</p> : null}
+              {isMonthly && <p>$12/mo</p>}
+              {isYearly && <p>$120/yr</p>}
             </div>
           </button>
           <button type="button" className="payment-plan">
             <img src={proImg} />
             <div className="paymentplan-content">
               <h3>Pro</h3>
-              {paymentMethod == "Monthly" && <p>$15/mo</p>}
-              {paymentMethod == "Yearly" && <p>$150/yr</p>}
+              {isMonthly && <p>$15/mo</p>}
+              {isYearly && <p>$150/yr</p>}
             </div>
           </button>
           <div className="monthly-yearly">

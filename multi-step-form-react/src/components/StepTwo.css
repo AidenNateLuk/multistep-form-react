@@ -12,7 +12,6 @@ main {
     p {
       color: hsl(231, 11%, 63%);
       font-size: 15px;
-      font-weight: 500;
       line-height: 1.5rem;
     }
   }
@@ -21,10 +20,6 @@ main {
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
-    label {
-      color: hsl(213, 96%, 18%);
-      font-weight: 500;
-    }
     .payment-plan {
       display: flex;
       flex-direction: row;
@@ -35,6 +30,8 @@ main {
       padding: 1rem;
       cursor: pointer;
       background-color: white;
+      color: hsl(213, 98%, 22%);
+      font-weight: 400;
     }
     .payment-plan:hover {
       background-color: hsla(265, 74%, 91%, 0.224);
