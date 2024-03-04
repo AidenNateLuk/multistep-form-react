@@ -1,4 +1,5 @@
-import "./StepOne.css";
+import "./styles.css";
+
 export default function StepOne() {
   return (
     <main>
