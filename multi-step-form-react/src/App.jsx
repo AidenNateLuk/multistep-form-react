@@ -47,12 +47,12 @@ function App() {
             setPaymentPlan={setPaymentPlan}
           />
         )}
-        {isStepThree && <StepThree />}
+        {isStepThree && <StepThree isMonthly={isMonthly} isYearly={isYearly} />}
       </div>
       <footer>
         {(isStepTwo || isStepThree) && (
           <button id="back-btn" onClick={handlePrevious}>
-            Back
+            Go Back
           </button>
         )}
         <button onClick={handleNext} id="next">
