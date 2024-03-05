@@ -42,6 +42,25 @@ export default function StepTwo({
             </button>
           );
         })}
+
+        <div className="monthly-yearly">
+          <div className={paymentFrequency === "Monthly" ? "monthly" : ""}>
+            Monthly
+          </div>
+          <div
+            className={
+              paymentFrequency === "Monthly"
+                ? "toggle monthly"
+                : "toggle yearly"
+            }
+            onClick={togglePaymentFrequency}
+          >
+            <div></div>
+          </div>
+          <div className={paymentFrequency === "Yearly" ? "yearly" : ""}>
+            Yearly
+          </div>
+        </div>
       </div>
     </>
   );
