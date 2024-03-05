@@ -21,25 +21,26 @@
   margin-bottom: 2rem;
   .payment-plan {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0.25rem;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
     border: hsl(229, 24%, 87%) solid 1px;
     border-radius: 10px;
-    padding: 1rem;
     cursor: pointer;
     background-color: white;
     color: hsl(213, 98%, 22%);
-    font-weight: 400;
-    line-height: 1.25rem;
-    h3 {
-      font-weight: 500;
-    }
-    p {
-      color: hsl(231, 11%, 63%);
-    }
-    .insentive {
-      padding-top: 1rem;
+    .payment-plan-content {
+      font-weight: 400;
+      line-height: 1.25rem;
+      h3 {
+        font-weight: 500;
+      }
+      p {
+        color: hsl(231, 11%, 63%);
+      }
+      .insentive {
+        padding-top: 1rem;
+      }
     }
   }
   .payment-plan:hover {

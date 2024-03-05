@@ -5,10 +5,14 @@
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
+
   .card {
-    padding: 1rem 1.5rem;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
     border-radius: 8px;
     background-color: white;
     min-width: 270px;
@@ -52,6 +56,7 @@
     background-size: 100vw;
   }
   .card {
-    background-repeat: no-repeat;
+    margin-left: 38rem;
+    max-width: 600px;
   }
 }

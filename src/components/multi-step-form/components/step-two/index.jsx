@@ -30,9 +30,9 @@ export default function StepTwo({
               className="payment-plan"
               onClick={() => selectPlan(plan)}
             >
-              <img src={plans[i].image} />
+              <img src={plan.image} />
               <div className="paymentplan-content">
-                <h3>{plans[i].name}</h3>
+                <h3>{plan.name}</h3>
                 {paymentFrequency === "Monthly" && (
                   <p>${plan.monthlyPrice}/mo</p>
                 )}
