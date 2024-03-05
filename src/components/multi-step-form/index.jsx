@@ -5,24 +5,32 @@ import StepOne from "./components/step-one";
 import StepTwo from "./components/step-two";
 import StepThree from "./components/step-three";
 
+// images
+import arcadeImg from "../../assets/images/icon-arcade.svg";
+import proImg from "../../assets/images/icon-pro.svg";
+import advancedImg from "../../assets/images/icon-advanced.svg";
+
 export default function MultiStepForm() {
   const [steps, setSteps] = useState([1, 2, 3, 4]);
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [plans, setPlans] = useState([
     {
       name: "Arcade",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
+      monthlyPrice: 9,
+      yearlyPrice: 90,
+      image: arcadeImg,
     },
     {
-      name: "Arcade2",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
+      name: "Advanced",
+      monthlyPrice: 12,
+      yearlyPrice: 120,
+      image: advancedImg,
     },
     {
-      name: "Arcade3",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
+      name: "Pro",
+      monthlyPrice: 15,
+      yearlyPrice: 150,
+      image: proImg,
     },
   ]);
   const [paymentFrequency, setPaymentFrequency] = useState("Monthly");

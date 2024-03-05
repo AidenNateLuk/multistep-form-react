@@ -1,6 +1,3 @@
-import arcadeImg from "../../../../assets/images/icon-arcade.svg";
-import proImg from "../../../../assets/images/icon-pro.svg";
-import advancedImg from "../../../../assets/images/icon-advanced.svg";
 import "./styles.css";
 import { useState } from "react";
 
@@ -31,13 +28,14 @@ export default function StepTwo({
               className="payment-plan"
               onClick={(e) => selectPlan(e)}
             >
-              <img src={arcadeImg} />
+              <img src={plans[i].image} />
               <div className="paymentplan-content">
-                <h3>Arcade</h3>
+                <h3>{plans[i].name}</h3>
                 {paymentFrequency === "Monthly" && (
                   <p>${plan.monthlyPrice}/mo</p>
                 )}
                 {paymentFrequency === "Yearly" && <p>${plan.yearlyPrice}/yr</p>}
+                <div className="insentive">2 months free</div>
               </div>
             </button>
           );

@@ -30,6 +30,17 @@
     background-color: white;
     color: hsl(213, 98%, 22%);
     font-weight: 400;
+    line-height: 1.25rem;
+    h3 {
+      font-weight: 500;
+    }
+    p {
+      padding-top: 0.25rem;
+      color: hsl(231, 11%, 63%);
+    }
+    .insentive {
+      padding-top: 0.5rem;
+    }
   }
   .payment-plan:hover {
     background-color: hsla(243, 100%, 62%, 0.045);
