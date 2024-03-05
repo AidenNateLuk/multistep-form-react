@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Header from "../header";
 import StepOne from "./components/step-one";
 import StepTwo from "./components/step-two";
 import StepThree from "./components/step-three";
-
+import StepFour from "./components/step-four";
 // images
 import arcadeImg from "../../assets/images/icon-arcade.svg";
 import proImg from "../../assets/images/icon-pro.svg";
@@ -37,27 +37,28 @@ export default function MultiStepForm() {
   const [paymentPlan, setPaymentPlan] = useState(1);
   const [addons, setAddons] = useState([
     {
-      title: "Arcade",
-      description: "Arcade",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
-      isChecked: true,
-    },
-    {
-      title: "Arcade",
-      description: "Arcade",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
+      title: "Online Service",
+      description: "Access to multiplayer games",
+      monthlyPrice: 1,
+      yearlyPrice: 10,
       isChecked: false,
     },
     {
-      title: "Arcade",
-      description: "Arcade",
-      monthlyPrice: 10,
-      yearlyPrice: 100,
+      title: "Larger Storage",
+      description: "Extra 1TB of cloud save",
+      monthlyPrice: 2,
+      yearlyPrice: 20,
+      isChecked: false,
+    },
+    {
+      title: "Customizable profile",
+      description: "Custom theme on your profile",
+      monthlyPrice: 2,
+      yearlyPrice: 20,
       isChecked: false,
     },
   ]);
+  const [filteredAddons, setFilteredAddons] = useState([]);
 
   const nextStep = () => {
     if (currentStep === steps[steps.length - 1]) {
@@ -83,6 +84,22 @@ export default function MultiStepForm() {
     }
   };
 
+  const toggleAddOn = (index) => {
+    const newAddons = addons.map((addon, i) => {
+      if (index === i) {
+        return { ...addon, isChecked: !addon.isChecked };
+      } else {
+        return addon;
+      }
+    });
+    setAddons(newAddons);
+  };
+  useEffect(() => {
+    const newFilteredAddons = addons.filter((addon) => addon.isChecked);
+    setFilteredAddons(newFilteredAddons);
+    console.log(newFilteredAddons);
+  }, [addons]);
+
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 1:
@@ -98,9 +115,21 @@ export default function MultiStepForm() {
           />
         );
       case 3:
-        return <StepThree addons={addons} />;
-      // case 4:
-      //   return <StepOne />;
+        return (
+          <StepThree
+            paymentFrequency={paymentFrequency}
+            addons={addons}
+            toggleAddOn={toggleAddOn}
+          />
+        );
+      case 4:
+        return (
+          <StepFour
+            paymentPlan={paymentPlan}
+            filteredAddons={filteredAddons}
+            paymentFrequency={paymentFrequency}
+          />
+        );
       default:
         return <div>Step was not found...</div>;
     }
@@ -116,19 +145,11 @@ export default function MultiStepForm() {
             {currentStep > 1 && (
               <button onClick={previousStep}>Previous Step</button>
             )}
-            <button onClick={nextStep}>Next Step</button>
+            <button onClick={nextStep}>
+              {currentStep === 4 ? "Confirm" : "Next Step"}
+            </button>
           </div>
         </div>
-
-        {/* {isStepOne && <StepOne />}
-        {isStepTwo && (
-          <StepTwo
-            isMonthly={isMonthly}
-            isYearly={isYearly}
-            setPaymentPlan={setPaymentPlan}
-          />
-        )}
-        {isStepThree && <StepThree isMonthly={isMonthly} isYearly={isYearly} />} */}
       </div>
     </>
   );

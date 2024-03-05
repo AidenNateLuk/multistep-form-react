@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function StepTwo({
   plans,
@@ -8,10 +8,12 @@ export default function StepTwo({
   paymentPlan,
   setPaymentPlan,
 }) {
-  const selectPlan = (event) => {
-    console.log({ event });
-    setPaymentPlan();
+  const selectPlan = (selectedPlan) => {
+    setPaymentPlan(selectedPlan);
   };
+  useEffect(() => {
+    console.log(paymentPlan);
+  }, [paymentPlan]);
 
   return (
     <>
@@ -26,7 +28,7 @@ export default function StepTwo({
               key={i}
               type="button"
               className="payment-plan"
-              onClick={(e) => selectPlan(e)}
+              onClick={() => selectPlan(plan)}
             >
               <img src={plans[i].image} />
               <div className="paymentplan-content">
