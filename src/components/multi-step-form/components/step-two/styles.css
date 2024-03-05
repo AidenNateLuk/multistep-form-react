@@ -69,11 +69,11 @@
     }
     .monthly {
       color: hsl(213, 96%, 18%);
-      font-weight: 700;
+      text-decoration: underline;
     }
     .yearly {
       color: hsl(213, 96%, 18%);
-      font-weight: 700;
+      text-decoration: underline;
     }
   }
 }
