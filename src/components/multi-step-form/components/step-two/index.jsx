@@ -42,7 +42,6 @@ export default function StepTwo({
             </button>
           );
         })}
-
         <div className="monthly-yearly">
           <div className={paymentFrequency === "Monthly" ? "monthly" : ""}>
             Monthly

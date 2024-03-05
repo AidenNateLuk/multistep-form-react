@@ -5,13 +5,15 @@ import StepOne from "./components/step-one";
 import StepTwo from "./components/step-two";
 import StepThree from "./components/step-three";
 import StepFour from "./components/step-four";
+import StepFive from "./components/step-five";
+
 // images
 import arcadeImg from "../../assets/images/icon-arcade.svg";
 import proImg from "../../assets/images/icon-pro.svg";
 import advancedImg from "../../assets/images/icon-advanced.svg";
 
 export default function MultiStepForm() {
-  const [steps, setSteps] = useState([1, 2, 3, 4]);
+  const [steps, setSteps] = useState([1, 2, 3, 4, 5]);
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [plans, setPlans] = useState([
     {
@@ -103,7 +105,7 @@ export default function MultiStepForm() {
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 1:
-        return <StepOne />;
+        return <StepOne nextStep={nextStep} />;
       case 2:
         return (
           <StepTwo
@@ -130,6 +132,8 @@ export default function MultiStepForm() {
             paymentFrequency={paymentFrequency}
           />
         );
+      case 5:
+        return <StepFive />;
       default:
         return <div>Step was not found...</div>;
     }
@@ -141,14 +145,23 @@ export default function MultiStepForm() {
       <div className="content">
         <div className="card">
           {renderCurrentStep()}
-          <div className="card__actions">
-            {currentStep > 1 && (
-              <button onClick={previousStep}>Previous Step</button>
-            )}
-            <button onClick={nextStep}>
-              {currentStep === 4 ? "Confirm" : "Next Step"}
-            </button>
-          </div>
+          {currentStep === 5 ? (
+            ""
+          ) : (
+            <div className="card__actions">
+              {currentStep > 1 && (
+                <button id="back" onClick={previousStep}>
+                  Previous Step
+                </button>
+              )}
+              <button
+                id={currentStep === 4 ? "confirm" : "next"}
+                onClick={nextStep}
+              >
+                {currentStep === 4 ? "Confirm" : "Next Step"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>

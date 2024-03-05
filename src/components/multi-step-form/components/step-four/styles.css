@@ -4,4 +4,63 @@
   }
 }
 .content {
+  .payment-container {
+    padding: 1rem;
+    background-color: hsl(231, 100%, 99%);
+    margin-bottom: 1rem;
+    p {
+      color: hsl(213, 96%, 18%);
+    }
+    .step-two-data {
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 1rem;
+      border-bottom: hsl(231, 11%, 63%) 1px solid;
+      .plan {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      #change {
+        color: hsl(231, 11%, 63%);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .step-three-data {
+    padding-top: 1rem;
+    p {
+      color: hsl(231, 11%, 63%);
+    }
+    .monthly-amount {
+      color: hsl(213, 96%, 18%);
+    }
+    .yearly-amount {
+      color: hsl(213, 96%, 18%);
+    }
+    ul {
+      line-height: 2rem;
+      li {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+    }
+  }
+  .total {
+    display: flex;
+    justify-content: space-between;
+    p {
+      color: hsl(231, 11%, 63%);
+    }
+    #total-amount {
+      color: hsl(243, 100%, 62%);
+    }
+  }
 }

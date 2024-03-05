@@ -14,6 +14,7 @@
   }
 }
 .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -35,11 +36,10 @@
       font-weight: 500;
     }
     p {
-      padding-top: 0.25rem;
       color: hsl(231, 11%, 63%);
     }
     .insentive {
-      padding-top: 0.5rem;
+      padding-top: 1rem;
     }
   }
   .payment-plan:hover {
