@@ -142,7 +142,7 @@ export default function MultiStepForm() {
   return (
     <>
       <Header steps={steps} currentStep={currentStep} />
-      <div className="content">
+      <div className="container">
         <div className="card">
           {renderCurrentStep()}
           {currentStep === 5 ? (

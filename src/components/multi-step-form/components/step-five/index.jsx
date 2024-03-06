@@ -8,9 +8,9 @@ export default function StepFive() {
         <img src={iconImage} />
         <h2>Thank you!</h2>
         <p>
-          Thanks for confirming your subscription! We hope you have fun using
-          our platform. if you ever need support, please feel free to email us
-          at support@loremgaming.com.
+          Thanks for confirming your subscription! <br /> We hope you have fun
+          using our <br /> platform. if you ever need support, <br /> please
+          feel free to email us at <br /> support@loremgaming.com.
         </p>
       </div>
     </>

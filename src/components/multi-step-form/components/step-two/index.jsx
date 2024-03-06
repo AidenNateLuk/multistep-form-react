@@ -18,7 +18,7 @@ export default function StepTwo({
   return (
     <>
       <div className="title">
-        <h1>Select Your Plan</h1>
+        <h2>Select Your Plan</h2>
         <p>You have the option of monthly or yearly billing</p>
       </div>
       <div className="content">
@@ -30,14 +30,15 @@ export default function StepTwo({
               className="payment-plan"
               onClick={() => selectPlan(plan)}
             >
-              <img src={plan.image} />
+              <div className="image">
+                <img src={plan.image} />
+              </div>
               <div className="paymentplan-content">
                 <h3>{plan.name}</h3>
                 {paymentFrequency === "Monthly" && (
                   <p>${plan.monthlyPrice}/mo</p>
                 )}
                 {paymentFrequency === "Yearly" && <p>${plan.yearlyPrice}/yr</p>}
-                <div className="insentive">2 months free</div>
               </div>
             </button>
           );

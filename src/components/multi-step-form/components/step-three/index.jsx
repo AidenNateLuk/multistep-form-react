@@ -15,19 +15,25 @@ export default function StepThree({ addons, paymentFrequency, toggleAddOn }) {
               key={i}
               className={`add-on ${addon.isChecked ? "selected" : ""}`}
             >
-              <input
-                type="checkbox"
-                defaultChecked={addons.isChecked}
-                onClick={() => toggleAddOn(i)}
-              />
-              <div className="add-on-text">
-                <h4>{addon.title}</h4>
-                <p>{addon.description}</p>
+              <div className="add-on-mini-container">
+                <input
+                  type="checkbox"
+                  defaultChecked={addons.isChecked}
+                  onClick={() => toggleAddOn(i)}
+                />
+                <div className="add-on-text">
+                  <h4>{addon.title}</h4>
+                  <p>{addon.description}</p>
+                </div>
               </div>
-              {paymentFrequency === "Monthly" && (
-                <p>${addon.monthlyPrice}/mo</p>
-              )}
-              {paymentFrequency === "Yearly" && <p>${addons.yearlyPrice}/yr</p>}
+              <div className="price">
+                {paymentFrequency === "Monthly" && (
+                  <p>${addon.monthlyPrice}/mo</p>
+                )}
+                {paymentFrequency === "Yearly" && (
+                  <p>${addons.yearlyPrice}/yr</p>
+                )}
+              </div>
             </div>
           );
         })}

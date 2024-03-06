@@ -3,11 +3,11 @@ import "./styles.css";
 export default function StepOne() {
   return (
     <>
-      <div className="card-title">
-        <h1>Personal Info</h1>
+      <div className="title">
+        <h2>Personal Info</h2>
         <p>Please provide your name, email address and phone number.</p>
       </div>
-      <div className="card-content">
+      <div className="content">
         <label htmlFor="name">Name</label>
         <input id="name" type="text" placeholder="e.g. Stephen King" />
         <label htmlFor="email">Email Address</label>

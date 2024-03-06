@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #root {
   background-image: url("../../assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
@@ -8,11 +13,10 @@
   overflow-x: hidden;
 
   .card {
-    margin-right: 30px;
+    margin: auto;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
     border-radius: 8px;
     background-color: white;
     min-width: 270px;
@@ -33,13 +37,17 @@
       border: none;
       padding: 1rem 1.25rem;
       margin-right: 2rem;
+      cursor: pointer;
     }
     #back {
+      cursor: pointer;
+
       background: transparent;
       border: none;
       color: hsl(231, 11%, 63%);
     }
     #confirm {
+      cursor: pointer;
       font-weight: 600;
       color: white;
       background-color: hsl(243, 100%, 62%);
@@ -54,9 +62,13 @@
   #root {
     background-image: url("../../assets/images/bg-sidebar-mobile.svg");
     background-size: 100vw;
+    .card {
+      width: 600px;
+    }
   }
+}
+@media (max-width: 768px) {
   .card {
-    margin-left: 38rem;
-    max-width: 600px;
+    max-width: 280px;
   }
 }

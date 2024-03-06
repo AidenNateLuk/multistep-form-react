@@ -1,7 +1,5 @@
 .title {
-  padding-top: 1rem;
   margin-bottom: 1.5rem;
-  width: 80%;
   h2 {
     color: hsl(213, 96%, 18%);
     margin-bottom: 1rem;
@@ -14,26 +12,42 @@
 }
 .content {
   .add-on {
-    padding: 1rem 0.75rem;
-    gap: 1rem;
+    width: 85%;
     display: flex;
-    border: hsl(229, 24%, 87%) solid 1px;
-    border-radius: 10px;
-    font-size: 16px;
+    justify-content: space-between;
+    height: 10vh;
+    gap: 1rem;
+    padding: 0 2rem;
+    border: hsl(231, 11%, 63%) 1px solid;
+    border-radius: 8px;
     align-items: center;
 
-    .add-on-text {
+    .add-on-mini-container {
       display: flex;
-      flex-direction: column;
-      h4 {
-        color: hsl(213, 96%, 18%);
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      input {
+        height: 1rem;
+        width: 1rem;
+        cursor: pointer;
       }
-      p {
-        color: hsl(231, 11%, 63%);
+      .add-on-text {
+        h4 {
+          font-size: 15px;
+          color: hsl(213, 96%, 18%);
+        }
+        p {
+          color: hsl(231, 11%, 63%);
+          font-size: 15px;
+        }
       }
     }
     .price {
-      font-size: 14px;
+      p {
+        color: hsl(243, 100%, 62%);
+      }
     }
   }
   .add-on.selected {

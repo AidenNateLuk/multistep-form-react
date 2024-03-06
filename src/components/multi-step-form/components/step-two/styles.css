@@ -1,91 +1,70 @@
-.title {
-  margin-bottom: 1.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  h1 {
-    color: hsl(213, 96%, 18%);
-    margin-bottom: 1rem;
-  }
-  p {
-    color: hsl(231, 11%, 63%);
-    font-size: 15px;
-    line-height: 1.5rem;
-  }
-}
 .content {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 2rem;
   .payment-plan {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    align-items: center;
-    border: hsl(229, 24%, 87%) solid 1px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: white;
-    color: hsl(213, 98%, 22%);
-    .payment-plan-content {
-      font-weight: 400;
-      line-height: 1.25rem;
-      h3 {
-        font-weight: 500;
-      }
-      p {
-        color: hsl(231, 11%, 63%);
-      }
-      .insentive {
-        padding-top: 1rem;
-      }
-    }
-  }
-  .payment-plan:hover {
-    background-color: hsla(243, 100%, 62%, 0.045);
-    border-color: hsl(243, 100%, 62%);
-  }
-  .payment-plan:active {
-    background-color: hsla(243, 100%, 62%, 0.045);
-    border-color: hsl(243, 100%, 62%);
-  }
-  .monthly-yearly {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(231, 100%, 99%);
+    width: 100%;
+    height: 10vh;
     padding: 1rem;
+    align-items: center;
+    background-color: hsl(231, 100%, 99%);
+    border: hsl(231, 11%, 63%) 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    .image {
+      padding-bottom: 2rem;
+      img {
+        height: 3rem;
+      }
+    }
+  }
+}
+.payment-plan:hover {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(228, 100%, 84%);
+}
+.payment-plan:active {
+  background-color: hsl(217, 100%, 77%);
+}
+
+.monthly-yearly {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(231, 100%, 99%);
+  padding: 1rem;
+  border-radius: 15px;
+  .toggle {
+    background-color: hsl(213, 96%, 18%);
+    width: 2.25rem;
     border-radius: 15px;
-    .toggle {
-      background-color: hsl(213, 96%, 18%);
-      width: 2.25rem;
-      border-radius: 15px;
-      align-items: center;
-      padding: 0.25rem;
-      div {
-        background-color: white;
-        height: 0.9rem;
-        width: 0.9rem;
-        border-radius: 50%;
-        border: hsl(213, 96%, 18%) 1px solid;
-      }
+    align-items: center;
+    padding: 0.25rem;
+    div {
+      background-color: white;
+      height: 0.9rem;
+      width: 0.9rem;
+      border-radius: 50%;
+      border: hsl(213, 96%, 18%) 1px solid;
     }
-    .toggle.yearly {
-      div {
-        transform: translateX(110%);
-      }
+  }
+  .toggle.yearly {
+    div {
+      transform: translateX(110%);
     }
-    .monthly {
-      color: hsl(213, 96%, 18%);
-      text-decoration: underline;
-    }
-    .yearly {
-      color: hsl(213, 96%, 18%);
-      text-decoration: underline;
-    }
+  }
+  .monthly {
+    color: hsl(213, 96%, 18%);
+    text-decoration: underline;
+  }
+  .yearly {
+    color: hsl(213, 96%, 18%);
+    text-decoration: underline;
   }
 }
