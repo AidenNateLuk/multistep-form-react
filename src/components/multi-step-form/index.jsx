@@ -141,27 +141,30 @@ export default function MultiStepForm() {
 
   return (
     <>
-      <Header steps={steps} currentStep={currentStep} />
       <div className="container">
         <div className="card">
-          {renderCurrentStep()}
-          {currentStep === 5 ? (
-            ""
-          ) : (
-            <div className="card__actions">
-              {currentStep > 1 && (
-                <button id="back" onClick={previousStep}>
-                  Previous Step
+          <Header steps={steps} currentStep={currentStep} />
+          <div className="card-content">
+            {renderCurrentStep()}
+
+            {currentStep === 5 ? (
+              ""
+            ) : (
+              <div className="card__actions">
+                {currentStep > 1 && (
+                  <button id="back" onClick={previousStep}>
+                    Previous Step
+                  </button>
+                )}
+                <button
+                  id={currentStep === 4 ? "confirm" : "next"}
+                  onClick={nextStep}
+                >
+                  {currentStep === 4 ? "Confirm" : "Next Step"}
                 </button>
-              )}
-              <button
-                id={currentStep === 4 ? "confirm" : "next"}
-                onClick={nextStep}
-              >
-                {currentStep === 4 ? "Confirm" : "Next Step"}
-              </button>
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

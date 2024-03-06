@@ -5,7 +5,11 @@ export default function Header({ steps, currentStep }) {
     <header>
       {steps.map((s, i) => {
         return (
-          <div key={i} className={currentStep === s ? "selected" : ""}>
+          <div
+            id="indicator"
+            key={i}
+            className={currentStep === s ? "selected" : ""}
+          >
             {s}
           </div>
         );

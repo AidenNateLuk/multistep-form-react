@@ -1,11 +1,15 @@
 header {
-  height: 8.25vh;
+  height: 20vh;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   justify-content: center;
-  align-items: last baseline;
+  align-items: center;
   margin-bottom: 2rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
   div {
     border: white 0.05rem solid;
@@ -20,5 +24,13 @@ header {
     border: none;
     color: black;
     padding: 0.75rem 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: column;
+    background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+    justify-content: space-evenly;
   }
 }
